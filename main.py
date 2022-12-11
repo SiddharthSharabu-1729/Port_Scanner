@@ -63,10 +63,10 @@ if __name__ == "__main__":
     s = time.time()
     args = arguments()
     print(f"Initialising the scanner at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')} .........")
-    time.sleep(0.5)
-    print(f"Setting up the host {args.host} and checking if the host is up .....")
     HOST_UP  = host_isup(args.host)
-    if HOST_UP:
+    if HOST_UP and args.host != None:
+        print(f"Setting up the host {args.host} and checking if the host is up .....")
+        time.sleep(0.2)
         print(f"The Host {args.host} is Up ......")
         time.sleep(0.8)
         print(f"Scanning for the Open Ports .....")
@@ -80,5 +80,7 @@ if __name__ == "__main__":
             print("Completed the scan in: "+"{0:.3f}".format(e-s) + " seconds")
         else :
             print("no open ports found on this host ....")
+    elif (args.host == None) :
+        print("Please read the help to use the tool correctly")
     else :
         print(f"The Host {args.host} is down .....")
