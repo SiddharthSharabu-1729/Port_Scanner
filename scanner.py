@@ -12,7 +12,7 @@ banner = pyfiglet.figlet_format("Port Scanner", font="slant")
 cprint(banner)
 
 def arguments():
-    parser = ArgumentParser(prog="Advanced Port Scanner", usage="main.py -i 127.0.0.1 -s 24 -e 1000", description=f"Starting the Scanner at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}.......", epilog="Designed by Siddharth",)
+    parser = ArgumentParser(prog="Advanced Port Scanner", usage="python3 scanner.py -i 127.0.0.1 -s 24 -e 1000", description=f"Starting the Scanner at {datetime.datetime.now().strftime('%Y-%m-%d %H:%M')}.......", epilog="Designed by Siddharth",)
 
     parser.add_argument('-i','--host', metavar='', dest='host', help="enter the IP or host address to scan the ports")
     parser.add_argument('-s','--start', metavar='', dest='start', type=int, default=1, help="enter the starting port number (default is from 1)")
